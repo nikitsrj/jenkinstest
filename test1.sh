@@ -1,4 +1,4 @@
 #!/bin/bash
 echo " Hello foradian"
-echo " Hello RedHat"
+echo " Hi RedHat"
 
