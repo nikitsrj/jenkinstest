@@ -1,4 +1,4 @@
 #!/bin/bash
 echo " HELLO RedHat"
-echo "Hello Interns"
+echo "Hello Naresh"
 
