@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'nginx'
+    }
+    
+  }
   stages {
     stage('Hello') {
       steps {
@@ -9,9 +14,9 @@ pipeline {
 echo "Hello World"'''
             
           },
-          "Hello Miq": {
+          "Hello MIQ": {
             sh '''#!/bin/bash
-echo "Hello MIQ"'''
+echo " Hello MIQ"'''
             
           }
         )
