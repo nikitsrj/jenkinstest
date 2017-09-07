@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'nginx'
-    }
-    
-  }
+  agent any
   stages {
     stage('Hello') {
       steps {
