@@ -4,7 +4,7 @@ pipeline {
     stage('Hello') {
       steps {
         sh '''#!/bin/bash
-echo "Avengers Tony Stark"'''
+echo "Avengers iron man"'''
       }
     }
   }
