@@ -1,0 +1,889 @@
+"Plugin","Plugin Name","Family","Severity","IP Address","Protocol","Port","Exploit?","MAC Address","DNS Name","NetBIOS Name","Synopsis","Description","Solution","See Also","Risk Factor","CVE","First Discovered","Last Observed","Exploit Ease","Exploit Frameworks","Patch Publication Date"
+"14657","Red Hat Update Level","Red Hat Local Security Checks","Critical","10.118.91.132","TCP","0","No","00:50:56:86:c1:3b","","","The remote Red Hat server is out-of-date.","The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.","Apply the latest update.","https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata","Critical","","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","","","N/A"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.132","TCP","22","No","00:50:56:86:c1:3b","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.132","TCP","0","No","00:50:56:86:c1:3b","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.132","TCP","0","No","00:50:56:86:c1:3b","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.132","TCP","0","No","00:50:56:86:c1:3b","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"14657","Red Hat Update Level","Red Hat Local Security Checks","Critical","10.118.91.133","TCP","0","No","00:50:56:86:52:e7","","","The remote Red Hat server is out-of-date.","The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.","Apply the latest update.","https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata","Critical","","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","","","N/A"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.133","TCP","22","No","00:50:56:86:52:e7","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.133","TCP","0","No","00:50:56:86:52:e7","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.133","TCP","0","No","00:50:56:86:52:e7","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.133","TCP","0","No","00:50:56:86:52:e7","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"14657","Red Hat Update Level","Red Hat Local Security Checks","Critical","10.118.91.135","TCP","0","No","00:50:56:86:7d:69","","","The remote Red Hat server is out-of-date.","The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.","Apply the latest update.","https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata","Critical","","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","","","N/A"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.135","TCP","22","No","00:50:56:86:7d:69","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.135","TCP","0","No","00:50:56:86:7d:69","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.135","TCP","0","No","00:50:56:86:7d:69","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.135","TCP","0","No","00:50:56:86:7d:69","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"14657","Red Hat Update Level","Red Hat Local Security Checks","Critical","10.118.91.136","TCP","0","No","00:50:56:86:5d:b6","","SNGU1VLCDG3S02\SNGU1VLCDG3S02","The remote Red Hat server is out-of-date.","The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.","Apply the latest update.","https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata","Critical","","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","","","N/A"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.136","TCP","22","No","00:50:56:86:5d:b6","","SNGU1VLCDG3S02\SNGU1VLCDG3S02","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.136","TCP","0","No","00:50:56:86:5d:b6","","SNGU1VLCDG3S02\SNGU1VLCDG3S02","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.136","TCP","0","No","00:50:56:86:5d:b6","","SNGU1VLCDG3S02\SNGU1VLCDG3S02","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.136","TCP","0","No","00:50:56:86:5d:b6","","SNGU1VLCDG3S02\SNGU1VLCDG3S02","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"14657","Red Hat Update Level","Red Hat Local Security Checks","Critical","10.118.91.138","TCP","0","No","00:50:56:86:13:2e","","","The remote Red Hat server is out-of-date.","The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.","Apply the latest update.","https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata","Critical","","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","","","N/A"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.138","TCP","22","No","00:50:56:86:13:2e","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.138","TCP","0","No","00:50:56:86:13:2e","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.138","TCP","0","No","00:50:56:86:13:2e","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.138","TCP","0","No","00:50:56:86:13:2e","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"14657","Red Hat Update Level","Red Hat Local Security Checks","Critical","10.118.91.139","TCP","0","No","00:50:56:86:1a:81","","","The remote Red Hat server is out-of-date.","The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.","Apply the latest update.","https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata","Critical","","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","","","N/A"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.139","TCP","22","No","00:50:56:86:1a:81","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.139","TCP","0","No","00:50:56:86:1a:81","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.139","TCP","0","No","00:50:56:86:1a:81","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.139","TCP","0","No","00:50:56:86:1a:81","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.141","TCP","22","No","00:50:56:86:d1:55","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.141","TCP","0","No","00:50:56:86:d1:55","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.141","TCP","0","No","00:50:56:86:d1:55","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.141","TCP","0","No","00:50:56:86:d1:55","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.142","TCP","22","No","00:50:56:86:b3:bd","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.142","TCP","0","No","00:50:56:86:b3:bd","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.142","TCP","0","No","00:50:56:86:b3:bd","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.142","TCP","0","No","00:50:56:86:b3:bd","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.144","TCP","22","No","00:50:56:86:08:91","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.144","TCP","0","No","00:50:56:86:08:91","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.144","TCP","0","No","00:50:56:86:08:91","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.144","TCP","0","No","00:50:56:86:08:91","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
+"70658","SSH Server CBC Mode Ciphers Enabled","Misc.","Low","10.118.91.145","TCP","22","No","00:50:56:86:d2:2e","","","The SSH server is configured to use Cipher Block Chaining.","The SSH server is configured to support Cipher Block Chaining (CBC) encryption.  This may allow an attacker to recover the plaintext message from the ciphertext. 
+
+Note that this plugin only checks for the options of the SSH server and does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable CBC mode cipher encryption, and enable CTR or GCM cipher mode encryption.","","Low","CVE-2008-5161","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"133480","RHEL 8 : kernel (RHSA-2020:0339)","Red Hat Local Security Checks","Critical","10.118.91.145","TCP","0","No","00:50:56:86:d2:2e","","","The remote Red Hat host is missing one or more security updates.","An update for kernel is now available for Red Hat Enterprise Linux 8.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* kernel: heap overflow in mwifiex_update_vs_ie() function of Marvell WiFi driver (CVE-2019-14816)
+
+* kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c (CVE-2019-14895)
+
+* kernel: heap overflow in marvell/mwifiex/tdls.c (CVE-2019-14901)
+
+* kernel: rtl_p2p_noa_ie in drivers/net/wireless/realtek/rtlwifi/ps.c in the Linux kernel lacks a certain upper-bound check, leading to a buffer overflow (CVE-2019-17666)
+
+* kernel: heap overflow in mwifiex_set_uap_rates() function of Marvell Wifi Driver leading to DoS (CVE-2019-14814)
+
+* kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS (CVE-2019-14815)
+
+* kernel: incomplete fix for race condition between mmget_not_zero()/ get_task_mm() and core dumping in CVE-2019-11599 (CVE-2019-14898)
+
+* Kernel: KVM: export MSR_IA32_TSX_CTRL to guest - incomplete fix for TAA (CVE-2019-11135) (CVE-2019-19338)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Bug Fix(es) :
+
+* [Azure][8.1] Include patch 'PCI: hv: Avoid use of hv_pci_dev->pci_slot after freeing it' (BZ#1764635)
+
+* block layer: update to v5.3 (BZ#1777766)
+
+* backport xfs: fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT (BZ#1778692)
+
+* Backport important bugfixes from upstream post 5.3 (BZ#1778693)
+
+* LUN path recovery issue with Emulex LPe32002 HBA in RHEL 8.0 Server during storage side cable pull testing (BZ#1781108)
+
+* cifs tasks enter D state and error out with 'CIFS VFS: SMB signature verification returned error = -5' (BZ#1781110)
+
+* Update CIFS to linux 5.3 (except RDMA and conflicts) (BZ#1781113)
+
+* RHEL8.0 - Regression to RHEL7.6 by changing force_latency found during RHEL8.0 validation for SAP HANA on POWER (BZ#1781114)
+
+* blk-mq: overwirte performance drops on real MQ device (BZ#1782181)","Update the affected packages.","https://access.redhat.com/errata/RHSA-2020:0339
+https://access.redhat.com/security/cve/cve-2019-14814
+https://access.redhat.com/security/cve/cve-2019-14815
+https://access.redhat.com/security/cve/cve-2019-14816
+https://access.redhat.com/security/cve/cve-2019-14895
+https://access.redhat.com/security/cve/cve-2019-14898
+https://access.redhat.com/security/cve/cve-2019-14901
+https://access.redhat.com/security/cve/cve-2019-17666
+https://access.redhat.com/security/cve/cve-2019-19338","Critical","CVE-2019-14814,CVE-2019-14815,CVE-2019-14816,CVE-2019-14895,CVE-2019-14898,CVE-2019-14901,CVE-2019-17666,CVE-2019-19338","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Feb 4, 2020 12:00:00 +08"
+"138374","Red Hat curl local file overwrite (CVE-2020-8177)","Red Hat Local Security Checks","Medium","10.118.91.145","TCP","0","No","00:50:56:86:d2:2e","","","Red Hat Curl Local File Overwrite with -J.","A local file overwrite vulnerability exists in curl 7.20.0 to and including 7.70.0 due to the -J (--remove-header-name) being allowed to be used with -i (--include). An authenticated, local attacker can exploit this, via use of a malicious server to trick curl to overwrite files on the local host.","Update curl to version 7.71.0 or later.","https://access.redhat.com/security/cve/cve-2020-8177
+https://bugzilla.redhat.com/show_bug.cgi?id=1847915","Medium","CVE-2020-8177","Oct 13, 2020 11:30:43 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","N/A"
+"141606","RHEL 8 : kernel (RHSA-2020:4286)","Red Hat Local Security Checks","High","10.118.91.145","TCP","0","No","00:50:56:86:d2:2e","","","The remote Red Hat host is missing one or more security updates.","The remote Redhat Enterprise Linux 8 host has packages installed that are affected by multiple vulnerabilities as referenced in the RHSA-2020:4286 advisory.
+
+  - kernel: net: bluetooth: type confusion while processing AMP packets (CVE-2020-12351)
+
+  - kernel: net: bluetooth: information leak when processing certain AMP packets (CVE-2020-12352)
+
+  - kernel: kernel: buffer over write in vgacon_scroll (CVE-2020-14331)
+
+  - kernel: metadata validator in XFS may cause an inode with a valid, user-creatable extended attribute to be     flagged as corrupt (CVE-2020-14385)
+
+  - kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege (CVE-2020-14386)
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version number.","Update the affected packages.","https://cwe.mitre.org/data/definitions/131.html
+https://cwe.mitre.org/data/definitions/201.html
+https://cwe.mitre.org/data/definitions/250.html
+https://cwe.mitre.org/data/definitions/284.html
+https://cwe.mitre.org/data/definitions/787.html
+https://cwe.mitre.org/data/definitions/843.html
+https://access.redhat.com/security/cve/CVE-2020-12351
+https://access.redhat.com/security/cve/CVE-2020-12352
+https://access.redhat.com/security/cve/CVE-2020-14331
+https://access.redhat.com/security/cve/CVE-2020-14385
+https://access.redhat.com/security/cve/CVE-2020-14386
+https://access.redhat.com/errata/RHSA-2020:4286
+https://bugzilla.redhat.com/1858679
+https://bugzilla.redhat.com/1874800
+https://bugzilla.redhat.com/1875699
+https://bugzilla.redhat.com/1886521
+https://bugzilla.redhat.com/1886529","High","CVE-2020-12351,CVE-2020-12352,CVE-2020-14331,CVE-2020-14385,CVE-2020-14386","Oct 30, 2020 14:57:57 +08","Nov 4, 2020 16:14:35 +08","No known exploits are available","","Oct 20, 2020 12:00:00 +08"
