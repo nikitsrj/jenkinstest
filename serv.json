@@ -1,0 +1,82 @@
+{
+  "server_details": [
+    {
+      "seqNo": "01",
+      "storage": "IBM",
+      "datastore": "VNX-LUN8",
+      "cpu": 4,
+      "site": "SGDC",
+      "servertype": "VM",
+      "location": "Serangoon",
+      "operatingsystem": "Linux",
+      "systemcode": "BOC",
+      "ram": 4,
+      "databasesoftware": "NA",
+      "usagetype": "Database Server",
+      "environment": "Production_WithCustData",
+      "domain": "DAPAC",
+      "resourcepool": "nikit-smbc-poc",
+      "folder": "nicksrj",
+      "IPAddress": "10.68.32.123",
+      "DNS": "8.8.8.8",
+      "Gateway": "10.68.32.1",
+      "Subnet": "255.255.255.0",
+      "drives": [
+        5,
+        5
+      ]
+    },
+    {
+      "seqNo": "03",
+      "storage": "IBM",
+      "datastore": "VNX-LUN8",
+      "cpu": 4,
+      "site": "SGDC",
+      "servertype": "VM",
+      "location": "Serangoon",
+      "operatingsystem": "Linux",
+      "systemcode": "SLS",
+      "ram": 4,
+      "databasesoftware": "Oracle",
+      "usagetype": "Database Server",
+      "environment": "Production_WithCustData",
+      "domain": "DAPAC",
+      "resourcepool": "nikit-smbc-poc",
+      "folder": "nicksrj",
+      "IPAddress": "10.68.32.124",
+      "DNS": "8.8.8.8",
+      "Gateway": "10.68.32.1",
+      "Subnet": "255.255.255.0",
+      "drives": [
+        5,
+        5
+      ]
+    },
+    {
+      "seqNo": "02",
+      "storage": "HITACHI",
+      "datastore": "VNX-LUN9",
+      "cpu": 4,
+      "site": "SGDR",
+      "servertype": "VM",
+      "location": "DRC",
+      "operatingsystem": "Windows",
+      "systemcode": "WOC",
+      "ram": 6,
+      "databasesoftware": "NA",
+      "usagetype": "Web Server",
+      "environment": "DR",
+      "domain": "DAPAC",
+      "resourcepool": "nikit-smbc-poc",
+      "folder": "nicksrj",
+      "IPAddress": "10.68.32.125",
+      "DNS": "8.8.8.8",
+      "Gateway": "10.68.32.1",
+      "Subnet": "255.255.255.0",
+      "drives": [
+        5,
+        5
+      ]
+    }
+  ]
+}
